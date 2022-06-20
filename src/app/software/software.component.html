@@ -1,0 +1,505 @@
+<div class="main-container">
+    <mat-toolbar color="" class="main-toolbar">
+        <!-- <button mat-icon-button (click)="sidenav.toggle()"> -->
+            <button mat-icon-button (click)="opened=!opened">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <a routerLink="/landing"><img id="img_src" src="../../../assets/easycloudhrlogo2i.png" height="20"
+                style="margin-top: 7px;"></a>
+        <span class="spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">Reden Gabrinez</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                Logout
+            </button>
+        </mat-menu>
+
+    </mat-toolbar>
+    <mat-sidenav-container class="sidenav-container mat-app-background">
+        <mat-sidenav #snav  [(opened)]="opened" mode="side"
+            fixedTopGap="56" opened class="sidenav">
+            <mat-accordion>
+
+                <div style="width: 100%; text-align: center;padding: 50px 0; ">
+                    <!-- <img src="../../assets/logo/gateway-only.png" height="30" /> -->
+                   <!--  <img src="../../assets/logo/gateway-only-white.png" height="30" /> -->
+                </div>
+
+                <div style="padding: 15px 30px 15px 30px">
+                    <img id="company_img_src" src="" style="width: 100%" />
+                </div>
+
+                <mat-expansion-panel hideToggle class="mat-elevation-z0"
+                    style="border-bottom: 1px solid #585858;border-top: 1px solid #585858; ">
+                    <mat-expansion-panel-header matTooltip="Dashboard" routerLink="/software" #dashboardPanelHeader
+                        (click)="dashboardPanelHeader._toggle()">
+                        <mat-panel-title>
+                            <mat-icon>dashboard</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;" >
+                               Dashboard
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel class="mat-elevation-z0" style="border-bottom: 1px solid #585858;"
+                    >
+                    <mat-expansion-panel-header matTooltip="Setup">
+                        <mat-panel-title>
+                            <mat-icon>build_circle</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;">
+                                 Setup
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-nav-list style="margin-left: -25px; margin-right: -25px;">
+                        <a mat-list-item routerLink="/software/company-list"  matTooltip="Company">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/company.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Company
+                        </a>
+                        <a mat-list-item routerLink="/software/fishermen" matTooltip="Employee">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/employees.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Fishermen
+                        </a>
+                        <a mat-list-item routerLink="/software/tax-exemption-list" matTooltip="Tax Exemption">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/tax-haven.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Tax Exemption
+                        </a>
+                        <a mat-list-item routerLink="/software/mandatory-tables" matTooltip="Mandatory Tables">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/mandatory tables.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Mandatory Tables
+                        </a>
+                        <a mat-list-item routerLink="/software/shift-code-list" matTooltip="Shift">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/shift code.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Shift
+                        </a>
+                        <a mat-list-item routerLink="/software/year-list" matTooltip="Year">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/year.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Year
+                        </a>
+                        <a mat-list-item routerLink="/software/day-type-list" matTooltip="Day Type">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/day type.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Day Type
+                        </a>
+                        <a mat-list-item routerLink="/software/other-income" matTooltip="Other Income">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/other income.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Other Income
+                        </a>
+                        <a mat-list-item routerLink="/software/other-deductions" matTooltip="Other Deductions">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/other deductions.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Other Deductions
+                        </a>
+                        <a mat-list-item routerLink="/software/user-list" matTooltip="Users">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/user.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 Users
+                        </a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+<!-- 
+                <mat-expansion-panel class="mat-elevation-z0" style="border-bottom: 1px solid #585858;"
+                    *ngIf="moduleDTR">
+                    <mat-expansion-panel-header matTooltip="{{setLabel('DTR')}}">
+                        <mat-panel-title>
+                            <mat-icon>access_time</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;">
+                                 {{ setLabel("DTR") }}
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-nav-list style="margin-left: -25px; margin-right: -25px;">
+                        <a mat-list-item routerLink="/software/leave-credits-list" *ngIf="moduleOthers" matTooltip="{{setLabel('Leave Credits')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/leave credits.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Leave Credits") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/change-shift-code-list" *ngIf="moduleChangeShiftList" matTooltip="{{setLabel('Change Shift')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/change shift code.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Change Shift") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/leave-application-list"
+                            *ngIf="moduleLeaveApplicationList" matTooltip="{{setLabel('Leave Application')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/leave application.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Leave Application") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/overtime-application-list"
+                            *ngIf="moduleOvertimeApplicationList" matTooltip="{{setLabel('Overtime Application')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/overtime application.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Overtime Application") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/dtr-list" *ngIf="moduleDTRList" matTooltip="{{setLabel('DTR')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/DTR.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                            {{ setLabel("DTR") }}
+                        </a>
+                    </mat-nav-list>
+                </mat-expansion-panel> -->
+
+                <!-- <mat-expansion-panel class="mat-elevation-z0" style="border-bottom: 1px solid #585858;"
+                    *ngIf="modulePayroll">
+                    <mat-expansion-panel-header matTooltip="{{setLabel('Payroll')}}">
+                        <mat-panel-title>
+                            <mat-icon>money</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;">
+                                 {{ setLabel("Payroll") }}
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-nav-list style="margin-left: -25px; margin-right: -25px;">
+                        <a mat-list-item routerLink="/software/loan-list" *ngIf="moduleLoanList" matTooltip="{{setLabel('Loans')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/loan.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Loans") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/payroll-other-income-list"
+                            *ngIf="modulePayrollOtherIncomeList" matTooltip="{{setLabel('Other Income')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/other income.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Other Income") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/payroll-other-deduction-list"
+                            *ngIf="modulePayrollOtherDeductionList" matTooltip="{{setLabel('Other Deductions')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/other deductions.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Other Deductions") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/payroll-list" *ngIf="modulePayrollList" matTooltip="{{setLabel('Payroll')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/payroll.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Payroll") }}
+                        </a>
+                    </mat-nav-list>
+                </mat-expansion-panel> -->
+
+                <!-- <mat-expansion-panel class="mat-elevation-z0" style="border-bottom: 1px solid #585858;"
+                    *ngIf="moduleReports">
+                    <mat-expansion-panel-header matTooltip="{{setLabel('Reports')}}">
+                        <mat-panel-title>
+                            <mat-icon>print</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;">
+                                 {{ setLabel("Reports") }}
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-nav-list style="margin-left: -25px; margin-right: -25px;">
+                        <a mat-list-item routerLink="/software/report-dtr" *ngIf="moduleDTRReports" matTooltip="{{setLabel('DTR Reports')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("DTR Report") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-payslip-per-employee" *ngIf="modulePayslipReports" matTooltip="{{setLabel('Payslip Report')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Payslip Report") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-mandatory" *ngIf="moduleMandatoryReports" matTooltip="{{setLabel('Mandatory Reports')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Mandatory Reports") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-demographics" *ngIf="moduleDemographicsReports" matTooltip="{{setLabel('Demographics')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Demographics") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-organization-chart" *ngIf="moduleOrganizationalChartReports" matTooltip="{{setLabel('Organizational Chart')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Organizational Chart") }}
+                        </a>
+
+                        <a mat-list-item routerLink="/software/report-payroll-work-sheet" *ngIf="modulePayrollReports" matTooltip="{{setLabel('Payroll Work Sheet')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Payroll Work Sheet") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-payroll-work-sheet-history" *ngIf="modulePayrollReports" matTooltip="{{setLabel('Payroll History')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Payroll History") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-payroll-other-income" *ngIf="modulePayrollReports" matTooltip="{{setLabel('Payroll Other Income')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Payroll Other Income") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-payroll-other-deduction" *ngIf="modulePayrollReports" matTooltip="{{setLabel('Payroll Other Deduction')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Payroll Other Deduction") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-company-journal-voucher" *ngIf="modulePayrollReports" matTooltip="{{setLabel('Journal Voucher')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Journal Voucher") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-month-withholding-tax" *ngIf="modulePayrollReports" matTooltip="{{setLabel('Withholding Tax Monthly')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Withholding Tax Monthly") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/report-sss-loan" *ngIf="modulePayrollReports" matTooltip="{{setLabel('SSS Loan')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("SSS Loan") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/atm-bank-report" *ngIf="modulePayrollReports" matTooltip="{{setLabel('ATM Bank Report')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/reports.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("ATM Bank Report") }}
+                        </a>
+
+                    </mat-nav-list>
+                </mat-expansion-panel> -->
+                
+                <!-- <mat-expansion-panel class="mat-elevation-z0" style="border-bottom: 1px solid #585858;"
+                    *ngIf="modulePortal">
+                    <mat-expansion-panel-header matTooltip="{{setLabel('Portal')}}">
+                        <mat-panel-title>
+                            <mat-icon>camera</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;">
+                                 {{ setLabel("Portal") }}
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-nav-list style="margin-left: -25px; margin-right: -25px;">
+                        <a mat-list-item routerLink="/software/portal-employee" *ngIf="moduleEmployeePortal" matTooltip="{{setLabel('Employee Portal')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/portal.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                                 {{ setLabel("Employee Portal") }}
+                        </a>
+
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="mat-elevation-z0" style="border-bottom: 1px solid #585858;"
+                    *ngIf="moduleSettings">
+                    <mat-expansion-panel-header matTooltip="{{setLabel('Settings')}}">
+                        <mat-panel-title>
+                            <mat-icon>settings</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;">
+                                 {{ setLabel("Settings") }}
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-nav-list style="margin-left: -25px; margin-right: -25px;">
+                        <a mat-list-item routerLink="/software/system-tables-list" *ngIf="moduleSystemTables" matTooltip="{{setLabel('System Tables')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/system tables.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                             {{ setLabel("System Tables") }}
+                        </a>
+                        <a mat-list-item routerLink="/software/current-setting-detail" *ngIf="moduleSettings" matTooltip="{{setLabel('Settings')}}">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/settings.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                             {{ setLabel("Settings") }}
+                        </a>
+                    </mat-nav-list>
+                </mat-expansion-panel> -->
+
+                <!-- <mat-expansion-panel style="pointer-events: none;" class="mat-elevation-z0"
+----------------------------------------------------------------
+                    style="border-bottom: 1px solid #585858;" *ngIf="moduleSecurity">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>security</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;">
+                                Security
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-nav-list style="margin-left: -25px; margin-right: -25px;">
+                        <a mat-list-item routerLink=".">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/manage.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                            Manage
+                        </a>
+                        <a mat-list-item routerLink=".">
+                            &nbsp;
+                            &nbsp;
+                            <img src="../../assets/menu-icons/change password.png" height="30" />
+                            &nbsp;
+                            &nbsp;
+                            Change Password
+                        </a>
+                    </mat-nav-list>
+--------------------------------------------------------------
+                </mat-expansion-panel> -->
+
+                <!-- <mat-expansion-panel hideToggle class="mat-elevation-z0" style="border-bottom: 1px solid #585858;">
+                    <mat-expansion-panel-header matTooltip="{{setLabel('Logout')}}" #logoutPanelHeader (click)="logOut()">
+                        <mat-panel-title>
+                            <mat-icon>power_settings_new</mat-icon>
+                            &nbsp;
+                            <span style="font-size: 15px; padding-left: 3px; padding-top: 2px;">
+                                 {{ setLabel("Logout") }}
+                            </span>
+                        </mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel> -->
+
+            </mat-accordion>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+            <br />
+            <br />
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <!-- <footer class="footer">
+        <div style="margin-top: 3px; font-size: 15px;">
+            &nbsp; © 2020 <b>Easy Cloud Systems Inc. / Easyfis Corporation</b>
+        </div>
+        <span class="spacer"></span>
+
+        <div style="margin-right: 40px; margin-bottom: -5px;">
+            <img src="../../assets/footer-icons/fb.png" height="25" />
+            <img src="../../assets/footer-icons/instagram.png" height="25" />
+            <img src="../../assets/footer-icons/tweeter.png" height="25" />
+        </div>
+    </footer> -->
+</div>
