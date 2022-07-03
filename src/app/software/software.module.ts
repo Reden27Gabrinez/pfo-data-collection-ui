@@ -21,6 +21,7 @@ import { SoftwareRoutingModule } from './software-routing.module';
 import { SoftwareComponent } from './software.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FishermenComponent } from './fishermen/fishermen.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FishermenComponent } from './fishermen/fishermen.component';
     SoftwareComponent,
     DashboardComponent,
     FishermenComponent,
+    UsersComponent,
   ],
   imports: [
     CommonModule,
