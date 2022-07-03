@@ -27,7 +27,7 @@ import { FishermenComponent } from './fishermen/fishermen.component';
   declarations: [
     SoftwareComponent,
     DashboardComponent,
-    FishermenComponent
+    FishermenComponent,
   ],
   imports: [
     CommonModule,

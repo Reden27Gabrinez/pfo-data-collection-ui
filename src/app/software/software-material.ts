@@ -22,6 +22,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -72,7 +75,9 @@ import { FormsModule } from '@angular/forms';
         MatRadioModule,
         MatCheckboxModule,
         MatAutocompleteModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatTableModule,
+        MatPaginatorModule
     ]
 })
 

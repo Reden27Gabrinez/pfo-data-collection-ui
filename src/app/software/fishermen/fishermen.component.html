@@ -1,1 +1,127 @@
-<p>fishermen works!</p>
+<!-- <div class="container">
+    <div class="example-button-container my-4">
+        <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" title="add">
+          <mat-icon>plus_one</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered text-center">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Address</th>
+              <th>Service</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Reden Gabrinez</td>
+              <td>redgabrinez@gmail.com</td>
+              <td>09632357966</td>
+              <td>Lumipac</td>
+              <td>Programmer</td>
+              <td>
+                <button mat-mini-fab class="bg-danger" aria-label="Example icon button with a plus one icon" title="add">
+                  <mat-icon>delete</mat-icon>
+                </button>&nbsp;
+                <button mat-mini-fab class="bg-warning" aria-label="Example icon button with a plus one icon" title="add">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Reden Gabrinez</td>
+              <td>redgabrinez@gmail.com</td>
+              <td>09632357966</td>
+              <td>Lumipac</td>
+              <td>Programmer</td>
+              <td>
+                <button mat-mini-fab class="bg-danger" aria-label="Example icon button with a plus one icon" title="add">
+                  <mat-icon>delete</mat-icon>
+                </button>&nbsp;
+                <button mat-mini-fab class="bg-warning" aria-label="Example icon button with a plus one icon" title="add">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 p-3 my-4">
+
+
+
+
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="text-center">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Weight </th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Symbol </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+
+          <!-- Action Column -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Action </th>
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-mini-fab class="bg-danger" aria-label="Example icon button with a plus one icon" title="add">
+                <mat-icon>delete</mat-icon>
+              </button>&nbsp;
+              <button mat-mini-fab class="bg-warning" aria-label="Example icon button with a plus one icon" title="add">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons 
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
