@@ -7,9 +7,9 @@
             <mat-form-field appearance="standard">
                 <mat-label>Filter</mat-label>
                 <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-              </mat-form-field>
+            </mat-form-field>
               <section class="example-container mat-elevation-z8" tabindex="0">
-              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 text-center">
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 text-center table table-hover">
               
                 <!-- Position Column -->
                 <ng-container matColumnDef="position">
