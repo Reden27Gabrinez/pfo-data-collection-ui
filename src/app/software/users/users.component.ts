@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 
+
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -37,9 +40,25 @@ export class UsersComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  constructor() { }
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit(): void {
   }
 
 }
+
+@Component({
+  selector: 'app-user-registration-dialog',
+  templateUrl: './user-registration-dialog/user-registration-dialog.component.html',
+  styleUrls: ['./user-registration-dialog/user-registration-dialog.component.css']
+})
+export class DialogContentExampleDialog {}

@@ -22,6 +22,7 @@ import { SoftwareComponent } from './software.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FishermenComponent } from './fishermen/fishermen.component';
 import { UsersComponent } from './users/users.component';
+import { UserRegistrationDialogComponent } from './users/user-registration-dialog/user-registration-dialog.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { UsersComponent } from './users/users.component';
     DashboardComponent,
     FishermenComponent,
     UsersComponent,
+    UserRegistrationDialogComponent,
   ],
   imports: [
     CommonModule,
